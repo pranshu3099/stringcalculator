@@ -6,7 +6,11 @@ export function Add(input: string) {
   if (input === "") return sum;
   input.split(",").forEach((num) => {
     const number = Number(num);
-    sum += number;
+    if (isNaN(number)) {
+      throw Error("invalid input");
+    } else {
+      sum += number;
+    }
   });
   return sum;
 }

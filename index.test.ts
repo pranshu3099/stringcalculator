@@ -20,4 +20,8 @@ describe("verfifies Add function is working accordingly", () => {
   test("comma delimiter => '1,2,3' returns 6", () => {
     expect(Add("1,2,3")).toBe(6);
   });
+  // edge-case with NaN
+  test("an invalid number 'f' => '1,2,f' throws invalid input", () => {
+    expect(() => Add("1,2,f")).toThrowError(Error("invalid input"));
+  });
 });
