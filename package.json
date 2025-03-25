@@ -1,0 +1,25 @@
+{
+  "name": "stringcalculator",
+  "version": "1.0.0",
+  "description": "simple example of tdd following best practices",
+  "main": "index.js",
+  "author": "pranshu",
+  "license": "ISC",
+  "private": "false",
+  "scripts": {
+    "build": "tsc",
+    "start": "node --experimental-modules --es-module-specifier-resolution=node dist/index.js",
+    "dev": "tsc-watch --onSuccess \"npm start\"",
+    "lint": "eslint . --ext .ts",
+    "test": "jest --watchAll",
+    "clear_jest": "jest --clearCache"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.13",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.0",
+    "tsc-watch": "^6.2.1",
+    "typescript": "^5.8.2"
+  }
+}
