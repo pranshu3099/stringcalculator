@@ -30,4 +30,10 @@ describe("verfifies Add function is working accordingly", () => {
   test("2 contiguous delimiters => '1,\\n' throws invalid input", () => {
     expect(() => Add("1,\n")).toThrowError(Error("invalid input"));
   });
+  test("custom delimiter => '//;\\n1;2;3' returns 6", () => {
+    expect(Add("//;\n1;2;3")).toBe(6);
+  });
+  test("custom delimiter without newline => '//;1;2;3' throws invalid input", () => {
+    expect(() => Add("//;1;2;3")).toThrowError(Error("invalid input"));
+  });
 });
