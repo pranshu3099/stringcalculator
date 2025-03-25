@@ -1,1 +1,1 @@
-simple ts program to demonstrate TDD using jest (ts-est)
+simple ts program to demonstrate TDD using jest.
