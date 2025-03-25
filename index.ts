@@ -40,6 +40,7 @@ export function Add(input: string) {
   let sum = 0;
   if (input === "") return sum;
   if (!input) throw new Error("invalid input");
+  const negativeList: number[] = [];
   let { delimiter, str } = extractDelimiter(input);
   str.split(delimiter).forEach((num) => {
     const number = Number(num);
@@ -48,8 +49,13 @@ export function Add(input: string) {
     if (isNaN(number) || !num) {
       throw Error("invalid input");
     } else {
+      if (number < 0) negativeList.push(number);
       sum += number;
     }
   });
+  if (negativeList.length) {
+    const negativeNumbers = negativeList.join(",");
+    throw new Error(`negatives not allowed - ${negativeNumbers}`);
+  }
   return sum;
 }
